@@ -1,0 +1,8 @@
+dbt-core
+dbt-mysql
+dbt-postgres
+pandas
+sqlalchemy
+sqlalchemy-utils
+pymysql
+psycopg2-binary
