@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Vue de staging des commandes, issue de la table brute raw_orders."
+    columns:
+      - name: order_id
+        description: "Identifiant unique de la commande (renommé depuis id)."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Identifiant du client associé à la commande (renommé depuis customer)."
+        tests:
+          - not_null
+
+      - name: ordered_at
+        description: "Date et heure à laquelle la commande a été passée."
+
+      - name: store_id
+        description: "Identifiant du magasin où la commande a été effectuée."
+
+      - name: subtotal
+        description: "Montant hors taxe de la commande (en centimes)."
+
+      - name: tax_paid
+        description: "Montant de la taxe payée (en centimes)."
+
+      - name: order_total
+        description: "Montant total de la commande incluant les taxes (en centimes)."
