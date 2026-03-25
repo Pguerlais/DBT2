@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Vue de staging des clients, issue de la table brute raw_customers."
+    columns:
+      - name: customer_id
+        description: "Identifiant unique du client (renommé depuis id)."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: "Nom complet du client (renommé depuis name)."
+        tests:
+          - not_null

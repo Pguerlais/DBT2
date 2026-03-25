@@ -14,12 +14,19 @@ models:
         description: "Identifiant du client associé à la commande (renommé depuis customer)."
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
 
       - name: ordered_at
         description: "Date et heure à laquelle la commande a été passée."
+        tests:
+          - not_null
 
       - name: store_id
         description: "Identifiant du magasin où la commande a été effectuée."
+        tests:
+          - not_null
 
       - name: subtotal
         description: "Montant hors taxe de la commande (en centimes)."
@@ -29,3 +36,5 @@ models:
 
       - name: order_total
         description: "Montant total de la commande incluant les taxes (en centimes)."
+        tests:
+          - not_null
